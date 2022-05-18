@@ -1,0 +1,27 @@
+{{ movies }}
+
+
+<ul>
+    {% for m in movies %}
+     <li>
+        <p><strong> {{ m.title }} <p</strong>
+        {{ m.genre }}
+
+
+
+
+        {{ m.title }}
+        {{ m.year }}
+        {{ m.genre }}
+        {{m.writer}}
+        {{ m.plot }}
+        {{m.director}}
+        {{m.awards}}
+        {{ m.Type}}
+        {{m.Actors }}
+
+
+
+    </li>
+    {% endfor %}
+    </ul>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Avengers</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+
+{% for m in movies %}
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>{{m.title}}</b></h1>
+  <p>{{m.genre}} <span class="w3-tag">{{m.Rated}}</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="https://cdn-media-1.freecodecamp.org/images/1*YhsGz4lXux0XEYL2NZkQJQ.jpeg" alt="avengers_director" style="width:20%; height: 15%;">
+    <div class="w3-container">
+      <h3><b>Movie Plot</b></h3>
+      <h5>{{m.writer}}<span class="w3-opacity"> ,(Writer)</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>{{m.plot}}</p>
+      <p>Run Time: {{m.runtime}}</p>
+      <div class="w3-row">
+        
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>About Movie</b></h3>
+      <h5>{{m.director}}<span class="w3-opacity"> ,Director</span></h5>
+    </div>
+
+    <div class="w3-container">
+        <dl class="row">
+            <dt class="col-sm-3">Awards</dt>
+            <dd class="col-sm-9">{{m.awards}}</dd>
+          
+            <dd class="col-sm-9">
+              <p>Definition for the term.</p>
+              <p>And some more placeholder definition text.</p>
+            </dd>
+          
+            <dt class="col-sm-3">Ratings:</dt>
+            <dd class="col-sm-9">IMDB: {{m.imdbRating}} , IMDB Votes: {{m.imdbVotes}}, IMDB ID: {{m.imdbID}}</dd>
+          <p>
+            <dt class="col-sm-3 text-truncate">Its all about BOX OFFICE!</dt>
+            <dd class="col-sm-9">Gross collection :{{m.BoxOffice}}</dd>
+          </p>
+            <dt class="col-sm-3">Extras</dt>
+            <dd class="col-sm-9">
+              <dl class="row">
+                <dt class="col-sm-4">Movie Type: {{m.Type}} DVD: {{m.DVD}}</dt>
+              </dl>
+            </dd>
+          </dl>      
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src={{m.Poster}} style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Released on {{m.released}}</b></h4>
+      <p>Cast: {{m.Actors}}</p>
+    </div>
+  </div><hr>
+ 
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <p>Created by <a href="https://www.linkedin.com/in/akash-shelkande/" target="_blank">Akash shelkande</a></p>
+</footer>
+</body>
+</html>
+{% endfor %}
